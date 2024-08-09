@@ -19,6 +19,10 @@ Installing essentials
 `sudo pacman -S bspwm sxhkd polybar rofi nitrogen alacritty firefox git`
 Fonts
 `sudo pacman -S ttf-jetbrains-mono ttf-jetbrains-mono-nerd`
+Setting up xinirtc
+`sudo nano .xinitrc`
+```exec sxhkd &
+exec bspwm```
 
 ### Title
 `sudo pacman -S linux-headers dkms`
