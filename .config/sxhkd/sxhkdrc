@@ -9,7 +9,7 @@ super + space
     {setxkbmap us, setxkbmap ru}
 
 @Print
-	{flameshot -show, bspc node -s biggest.local}}
+	{flameshot gui, bspc node -s biggest.local}}
 # Volume controls
 XF86Audio{RaiseVolume,LowerVolume,Mute}
     sh $HOME/bin/volume{ --up, --down, --toggle}
