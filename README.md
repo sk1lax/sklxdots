@@ -9,7 +9,7 @@ Installing xorg
 
 Installing timeshift & backing up system
 `sudo pacman -S timeshift`
-`sudo timeshift --create --comment "pure arch"`
+`sudo timeshift --create --comments "pure arch"`
 
 ### Audio
 Installing audio packages
