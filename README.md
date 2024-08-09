@@ -21,8 +21,8 @@ Fonts
 `sudo pacman -S ttf-jetbrains-mono ttf-jetbrains-mono-nerd`
 Setting up xinirtc
 `sudo nano .xinitrc`
-```exec sxhkd &
-exec bspwm```
+``exec sxhkd &
+exec bspwm``
 
 ### Title
 `sudo pacman -S linux-headers dkms`
