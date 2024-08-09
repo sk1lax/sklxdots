@@ -1,5 +1,5 @@
 # Arch setup
-
+## Basics
 Installing xorg
 `sudo pacman -S xorg xorg-server xorg-xinit xorg-xrandr xorg-xfonts`
 
@@ -11,6 +11,7 @@ Installing audio packages
 `sudo pacman -S pipewire pipewire-alsa pipewire-pulse pipewire alsa-utils`
 Installing audio settings 
 `sudo pacman -S pavucontrol pulseaudio-equalizer`
+
 
 
 `sudo pacman -S ttf-jetbrains-mono ttf-jetbrains-mono-nerd`
