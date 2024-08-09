@@ -3,7 +3,7 @@
 sxhkd &
 numlockx &
 nitrogen --restore &
-picom --config ~/.config/bspwm/picom/picom.conf &
+picom --config ~/.config/bspwm/picom.conf &
 xsetroot -cursor_name left_ptr &
 setxkbmap -option grp:alt_shift_toggle us,ru &
 #polybar
