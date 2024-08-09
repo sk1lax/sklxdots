@@ -1,4 +1,8 @@
 # Arch setup
+
+### WiFi setup
+`nmcli radio wifi on`
+`nmcli device wifi connect SSID password PASSWORD`
 ### Basics
 Installing xorg
 `sudo pacman -S xorg xorg-server xorg-xinit xorg-xrandr xorg-xfonts`
