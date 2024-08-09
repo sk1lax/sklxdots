@@ -16,7 +16,7 @@ Installing audio settings
 
 ### Bspwm
 Installing essentials
-`sudo pacman -S bspwm sxhkd polybar rofi nitrogen alacritty firefox git`
+`sudo pacman -S picom bspwm sxhkd polybar rofi nitrogen alacritty firefox git`
 Fonts
 `sudo pacman -S ttf-jetbrains-mono ttf-jetbrains-mono-nerd`
 Setting up xinirtc
