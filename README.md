@@ -11,6 +11,11 @@ Installing timeshift & backing up system
 `sudo pacman -S timeshift`
 `sudo timeshift --create --comments "pure arch"`
 
+### Pacman config
+`sudo nano /etc/pacman.conf`
+`[multilib]
+include = /etc/pacman.d/mirrorlist`
+
 ### Audio
 Installing audio packages
 `sudo pacman -S pipewire pipewire-alsa pipewire-pulse pipewire alsa-utils wireplumber`
