@@ -1,0 +1,84 @@
+super + {_,shift + }Return
+	{kitty, bspc node -s biggest.local}
+super + shift {q,r}
+	bspc {quit, wm -r}
+super + {d,x}
+    {rofi -show drun,sh $HOME/bin/powermenu}
+
+super + space
+    {setxkbmap us, setxkbmap ru}
+
+@Print
+	{flameshot -show, bspc node -s biggest.local}}
+# Volume controls
+XF86Audio{RaiseVolume,LowerVolume,Mute}
+    sh $HOME/bin/volume{ --up, --down, --toggle}
+    
+# Change focus of the Node or Swap Nodes
+super + {Left,Down,Up,Right}
+	bspc node -{f,s} {west,south,north,east}
+
+#ВЫЙТИ/ПЕРЕЗАГРУЗИТЬ BSPWM
+super + shift + {q,r}
+        bspc {quit,wm -r}
+
+#ПЕРЕЗАГРУЗИТЬ КОНФИГ SXHKD
+super + e
+        pkill -USR1 -x sxhkd
+
+#ЗАКРЫТЬ ОКНО ИЛИ УБИТЬ ЕГО
+super + {_, shift + }c
+	bspc node -{c}
+
+# Switch workspace
+#super + {Left,Right}
+#	bspc desktop -f {prev,next}.local
+
+# focus or send to the given desktop
+super + {_,alt + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+
+#ВЫЙТИ/ПЕРЕЗАГРУЗИТЬ BSPWM
+super + shift + {q,r}
+        bspc {quit,wm -r}
+
+#ПЕРЕЗАГРУЗКА
+super + ctrl + r
+        reboot
+
+#ВЫКЛЮЧЕНИЕ
+super + ctrl + p
+        poweroff
+
+
+XF86MonBrightness{Up,Down}  
+  brightnessctl s 10{+,-}%
+
+
+#ПОМЕНЯТЬ СТАТУС ОКНА НА /ТАЙЛОВОЕ/ПСЕВДО ТАЙЛОВОЕ/ПЛАВАЮЩЕЕ/ПОЛНОЭКРАННОЕ
+super + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+	bspc node -g {marked,locked,sticky,private}
+
+#ВЫБРАТЬ НАПРАВЛЕНИЕ В КОТОРОМ ОТКРОЕТСЯ НОВОЕ ОКНО
+super + alt + {Left,Down,Up,Right}
+	bspc node -p {west,south,north,east}
+
+#ОТМЕНИТЬ НАПРАВЛЕНИЕ В КОТОРОМ ОТКРОЕТСЯ НОВОЕ ОКНО
+super + alt + space
+	bspc node -p cancel
+	
+# Launch Applications
+#super + shift + {f,n,p,t,c,v,i,x,q,k,l}
+#	{firefox, \
+#	thunar, \
+#	pavucontrol, \
+#	telegram-desktop, \
+#	code, \
+#	virtualbox, \
+#	firefox --private-window, \
+#	sh $HOME/bin/xcolor-pick, \
+#	sh $HOME/bin/bible, \
+#	alacritty -e calcurse, \
+#	sh $HOME/bin/screen-lock}
