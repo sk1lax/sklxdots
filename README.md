@@ -46,7 +46,12 @@ sudo pacman -S ttf-jetbrains-mono ttf-jetbrains-mono-nerd
 - Setting up xinirtc
 ```
 sudo nano .xinitrc
+touch ~/.config/bspwm/bspwmrc
+touch ~/.config/sxhkd/sxhkdrc
+sudo chmod 775 ~/.config/bspwm/bspwmrc
+sudo chmod 775 ~/.config/sxhkd/sxhkdrc
 ```
+
 `exec sxhkd &
 exec bspwm`
 
