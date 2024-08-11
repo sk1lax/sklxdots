@@ -1,4 +1,4 @@
-# Arch setup
+# Personal Arch Setup
 
 ### WiFi setup
 ```
@@ -15,6 +15,11 @@ sudo pacman -S xorg xorg-server xorg-xinit xorg-xrandr xorg-xfonts
 ```
 sudo pacman -S timeshift
 sudo timeshift --create --comments "pure arch"
+```
+
+- Basic Apps
+```
+sudo pacman -S discord firefox telegram-desktop
 ```
 ### Pacman config
 ```
@@ -51,7 +56,7 @@ yay -S overskride
 ### Bspwm
 - Installing essentials
 ```
-sudo pacman -S picom bspwm sxhkd polybar rofi nitrogen alacritty firefox git
+sudo pacman -S picom bspwm sxhkd polybar rofi nitrogen alacritty git
 ```
 - Fonts
 ```
