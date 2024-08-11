@@ -44,7 +44,7 @@ sudo pacman -S bluez bluez-utils
 ```
 sudo pacman -S blueman
 ```
-  - [Overskride](https://github.com/kaii-lb/overskride#overskride)
+    - [Overskride](https://github.com/kaii-lb/overskride#overskride)
 ```
 yay -S overskride
 ```
