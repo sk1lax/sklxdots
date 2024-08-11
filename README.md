@@ -21,7 +21,7 @@ sudo timeshift --create --comments "pure arch"
 sudo nano /etc/pacman.conf
 ```
 `[multilib]
-include = /etc/pacman.d/mirrorlist`
+include = /etc/pacman.d/mirrorlist
 `
 ### Audio
 - Installing audio packages
@@ -34,6 +34,20 @@ sudo pacman -S pipewire pipewire-alsa pipewire-pulse pipewire alsa-utils wireplu
 sudo pacman -S pavucontrol pulseaudio-equalizer
 ```
 
+### Bluetoooth 
+- Bluetooth packages and daemon setup
+```
+sudo pacman -S bluez bluez-utils 
+```
+- Bluetooth management apps
+  - Blueman
+```
+sudo pacman -S blueman
+```
+  - Overskride
+```
+yay -S overskride
+```
 ### Bspwm
 - Installing essentials
 ```
