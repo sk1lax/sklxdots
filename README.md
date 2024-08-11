@@ -45,11 +45,11 @@ sudo pacman -S pavucontrol pulseaudio-equalizer
 sudo pacman -S bluez bluez-utils 
 ```
 - Bluetooth management apps
-  - Blueman
+ Blueman
 ```
 sudo pacman -S blueman
 ```
-    - [Overskride](https://github.com/kaii-lb/overskride#overskride)
+ [Overskride](https://github.com/kaii-lb/overskride#overskride)
 ```
 yay -S overskride
 ```
