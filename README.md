@@ -74,5 +74,25 @@ sudo chmod 775 ~/.config/sxhkd/sxhkdrc
 `exec sxhkd &
 exec bspwm`
 
+### Dual Booting
+```
+sudo pacman -S ntp os-prober
+```
+- Adding another OS
+```
+sudo os-prober
+```
+```
+sudo nano /etc/default/grub 
+```
+`GRUB_DISABLE_OS_PROBER=false`
+```
+sudo grub-mkconfig /boot/grub/grub.cfg
+```
+- Fixing time sync (if necessary0
+```
+sudo ntpd -qg
+sudo hwclock --systoh
+```
 ### Title
 `sudo pacman -S linux-headers dkms`
