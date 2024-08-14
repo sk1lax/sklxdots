@@ -96,3 +96,8 @@ sudo hwclock --systoh
 ```
 ### Title
 `sudo pacman -S linux-headers dkms`
+
+### Setting keyboard loyaout
+```
+sudo localectl --no-convert set-x11-keymap us,ru "" "" grp:win_space_toggle
+```
