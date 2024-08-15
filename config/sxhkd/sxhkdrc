@@ -1,0 +1,105 @@
+
+# Open Terminal
+super + {_,shift + }Return
+	{alacritty, bspc node -s biggest.local}
+
+# Quit/Restart BSPWM
+super + shift r
+	bspc wm -r
+	pkill -USR1 -x sxhkd
+super + shift q
+	bspc quit 
+# Call rofi / Powermenu
+super + {d,x}
+    {rofi -show drun,sh $HOME/bin/powermenu}
+
+# Change Keyboard Layout
+#super + space
+#    {setxkbmap ru, setxkbmap us}
+
+#
+# KEYS
+#
+
+# Volume Controls
+XF86AudioRaiseVolume
+    pactl set-sink-volume 0 +5%
+XF86AudioLowerVolume
+    pactl set-sink-volume 0 -5%
+XF86AudioMute
+    pactl set-sink-mute 0 toggle
+# Brightness Controls
+
+XF86MonBrightness{Up,Down}  
+  brightnessctl s 10{+,-}%  
+
+# screenshot
+Print
+	flameshot full
+shift + Print
+	flameshot gui
+
+#
+# BSPWM
+#
+
+#Kill window
+super + c
+	bspc node -{c}
+
+# set the window state
+super + Up 
+	bspc node -t fullscreen
+super + Down
+	bspc node -t tiled
+
+# Switch workspace
+#super + {Left,Right}
+#	bspc desktop -f {prev,next}.local
+
+# focus or send to the given desktop
+super + {_,alt + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+# Change focus to next window, including floating window
+alt + {_,shift + }Tab
+    bspc node -f {next.local,prev.local}
+
+# Reboot
+super + ctrl + r
+        reboot
+
+# Power Off
+super + ctrl + p
+        poweroff
+        
+
+
+
+
+#ПОМЕНЯТЬ СТАТУС ОКНА НА /ТАЙЛОВОЕ/ПСЕВДО ТАЙЛОВОЕ/ПЛАВАЮЩЕЕ/ПОЛНОЭКРАННОЕ
+super + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+	bspc node -g {marked,locked,sticky,private}
+
+#ВЫБРАТЬ НАПРАВЛЕНИЕ В КОТОРОМ ОТКРОЕТСЯ НОВОЕ ОКНО
+super + alt + {Left,Down,Up,Right}
+	bspc node -p {west,south,north,east}
+
+#ОТМЕНИТЬ НАПРАВЛЕНИЕ В КОТОРОМ ОТКРОЕТСЯ НОВОЕ ОКНО
+super + alt + space
+	bspc node -p cancel
+	
+# Launch Applications
+#super + shift + {f,n,p,t,c,v,i,x,q,k,l}
+#	{firefox, \
+#	thunar, \
+#	pavucontrol, \
+#	telegram-desktop, \
+#	code, \
+#	virtualbox, \
+#	firefox --private-window, \
+#	sh $HOME/bin/xcolor-pick, \
+#	sh $HOME/bin/bible, \
+#	alacritty -e calcurse, \
+#	sh $HOME/bin/screen-lock}
