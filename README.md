@@ -74,6 +74,11 @@ sudo chmod 775 ~/.config/sxhkd/sxhkdrc
 `exec sxhkd &
 exec bspwm`
 
+### Theming qt /gtk apps
+- Qt theme config tools
+```
+sudo pacman -S qt5ct kvantum
+```
 ### Dual Booting
 ```
 sudo pacman -S ntp os-prober
