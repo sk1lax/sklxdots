@@ -106,12 +106,11 @@ sudo localectl --no-convert set-x11-keymap us,ru "" "" grp:win_space_toggle
 ```
 sudo nano /etc/X11/xorg.conf.d/40-libinput.conf
 ```
-`
- Section "InputClass"
-  Identifier "libinput pointer catchall"
-  MatchIsPointer "on"
-  MatchDevicePath "/dev/input/event*"
-  Driver "libinput"
-  Option "AccelProfile" "flat"
+`Section "InputClass"\n
+  Identifier "libinput pointer catchall"\n
+  MatchIsPointer "on"\n
+  MatchDevicePath "/dev/input/event*"\n
+  Driver "libinput"\n
+  Option "AccelProfile" "flat"\n
  EndSection
  `
