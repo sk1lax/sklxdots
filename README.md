@@ -111,7 +111,9 @@ sudo nano /etc/X11/xorg.conf.d/40-libinput.conf
 `
 
 ### Gnome
-```sudo pacman -S gnome gnome-tweaks gdm
 ```
-```sudo pacman -R gnome-calculator gnome-calendar gnome-clocks gnome-connections gnome-console gnome-contacts simple-scan yelp gnome-music snapshot gnome-software gnome-weather epiphany gnome-maps
+sudo pacman -S gnome gnome-tweaks gdm
+```
+```
+sudo pacman -R gnome-calculator gnome-calendar gnome-clocks gnome-connections gnome-console gnome-contacts simple-scan yelp gnome-music snapshot gnome-software gnome-weather epiphany gnome-maps
 ```
