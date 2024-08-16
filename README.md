@@ -101,3 +101,15 @@ sudo hwclock --systoh
 ```
 sudo localectl --no-convert set-x11-keymap us,ru "" "" grp:win_space_toggle
 ```
+
+### Disabling Mouse Acceleration
+```
+sudo nano /etc/X11/xorg.conf.d/40-libinput.conf
+```
+`Section "InputClass"
+  Identifier "libinput pointer catchall"
+  MatchIsPointer "on"
+  MatchDevicePath "/dev/input/event*"
+  Driver "libinput"
+  Option "AccelProfile" "flat"
+ EndSection`
