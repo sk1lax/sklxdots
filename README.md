@@ -56,7 +56,7 @@ yay -S overskride
 ### Bspwm
 - Installing essentials
 ```
-sudo pacman -S picom bspwm sxhkd polybar rofi nitrogen alacritty git
+sudo pacman -S picom bspwm sxhkd polybar rofi nitrogen alacritty git brightnessctl
 ```
 - Fonts
 ```
