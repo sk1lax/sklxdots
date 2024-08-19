@@ -106,7 +106,9 @@ blacklist rtw88_8821ce
 `
 
 ```
-git clone https://aur.archlinux.org/rtl88x2bu-dkms-git.git
+git clone https://aur.archlinux.org/rtl8821ce-dkms-git.git
+cd rtl8821ce-dkms-git
+makepkg -si
 ```
 
 
