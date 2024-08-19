@@ -131,13 +131,16 @@ sudo nano /etc/X11/xorg.conf.d/40-libinput.conf
  EndSection
 ```
 
-### Nvidia Setup
+### Graphics Setup
+- Essential Packages
 ```
-sudo pacman -S nvidia nvidia-prime nvidia-utils 
+sudo pacman -S nvidia nvidia-prime nvidia-utils lib32-nvidia-utils vulkan-intel lib32-vulkan-intel
 ```
+- GPU Switcher
 ```
 yay -S envycontrol
 ```
+-  Udev rules from wiki
 ```
 sudo nano /etc/udev/rules.d/80-nvidia-pm.rules
 ```
@@ -154,7 +157,6 @@ ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030000"
 ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030200", TEST=="power/control", ATTR{power/control}="auto"
 ```
 
-
 ```
 sudo nano /etc/modprobe.d/nvidia-pm.conf
 ```
@@ -166,4 +168,9 @@ sudo pacman -S gnome gnome-tweaks gdm
 ```
 ```
 sudo pacman -R gnome-calculator gnome-calendar gnome-clocks gnome-connections gnome-console gnome-contacts simple-scan yelp gnome-music snapshot gnome-software gnome-weather epiphany gnome-maps gnome-disk-utility totem gnome-logs gnome-system-monitor rygel gnome-tour gnome-font-viewer gnome-characters malcontent
+```
+
+### KDE
+```
+sudo pacman -S sddm plasma kate dolphin 
 ```
