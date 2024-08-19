@@ -153,6 +153,13 @@ ACTION=="unbind", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x0302
 ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030000", TEST=="power/control", ATTR{power/control}="auto"
 ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030200", TEST=="power/control", ATTR{power/control}="auto"
 ```
+
+
+```
+sudo nano /etc/modprobe.d/nvidia-pm.conf
+```
+`options nvidia "NVreg_DynamicPowerManagement=0x02"`
+
 ### Gnome
 ```
 sudo pacman -S gnome gnome-tweaks gdm
