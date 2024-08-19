@@ -121,10 +121,38 @@ sudo localectl --no-convert set-x11-keymap us,ru "" "" grp:win_space_toggle
 ```
 sudo nano /etc/X11/xorg.conf.d/40-libinput.conf
 ```
-`
+```
+ Section "InputClass"
+  Identifier "libinput pointer catchall"
+  MatchIsPointer "on"
+  MatchDevicePath "/dev/input/event*"
+  Driver "libinput"
+  Option "AccelProfile" "flat"
+ EndSection
+```
 
-`
+### Nvidia Setup
+```
+sudo pacman -S nvidia nvidia-prime nvidia-utils 
+```
+```
+yay -S envycontrol
+```
+```
+sudo nano /etc/udev/rules.d/80-nvidia-pm.rules
+```
+```
+# Enable runtime PM for NVIDIA VGA/3D controller devices on driver bind
+ACTION=="bind", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030000", TEST=="power/control", ATTR{power/control}="auto"
+ACTION=="bind", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030200", TEST=="power/control", ATTR{power/control}="auto"
 
+# Disable runtime PM for NVIDIA VGA/3D controller devices on driver unbind
+ACTION=="unbind", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030000", TEST=="power/control", ATTR{power/control}="on"
+ACTION=="unbind", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030200", TEST=="power/control", ATTR{power/control}="on"
+# Enable runtime PM for NVIDIA VGA/3D controller devices on adding device
+ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030000", TEST=="power/control", ATTR{power/control}="auto"
+ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x030200", TEST=="power/control", ATTR{power/control}="auto"
+```
 ### Gnome
 ```
 sudo pacman -S gnome gnome-tweaks gdm
