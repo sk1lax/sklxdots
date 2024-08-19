@@ -172,5 +172,5 @@ sudo pacman -R gnome-calculator gnome-calendar gnome-clocks gnome-connections gn
 
 ### KDE
 ```
-sudo pacman -S sddm plasma kate dolphin 
+sudo pacman -S sddm plasma kate dolphin spectacle gwenview
 ```
