@@ -94,9 +94,16 @@ sudo grub-mkconfig /boot/grub/grub.cfg
 sudo ntpd -qg
 sudo hwclock --systoh
 ```
-### Title
-`sudo pacman -S linux-headers dkms`
-
+### RealteK driver issue fix
+```
+sudo pacman -Syu linux-headers dkms bc
+```
+```
+nano /etc/modprobe.d/blacklist.conf
+```
+`
+blacklist rtw88_8821ce
+`
 ### Setting keyboard loyaout
 ```
 sudo localectl --no-convert set-x11-keymap us,ru "" "" grp:win_space_toggle
