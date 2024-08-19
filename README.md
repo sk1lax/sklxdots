@@ -104,6 +104,12 @@ nano /etc/modprobe.d/blacklist.conf
 `
 blacklist rtw88_8821ce
 `
+
+```
+git clone https://aur.archlinux.org/rtl88x2bu-dkms-git.git
+```
+
+
 ### Setting keyboard loyaout
 ```
 sudo localectl --no-convert set-x11-keymap us,ru "" "" grp:win_space_toggle
