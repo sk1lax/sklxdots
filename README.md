@@ -25,9 +25,10 @@ sudo pacman -S flatpak firefox telegram-desktop alacritty git
 ```
 sudo nano /etc/pacman.conf
 ```
-`[multilib]
+```
+[multilib]
 include = /etc/pacman.d/mirrorlist
-`
+```
 ### Audio
 - Installing audio packages
 ```
@@ -77,7 +78,9 @@ exec sxhkd &
 exec bspwm
 ```
 - Adding Keyboard Layout Keybind
-`sudo localectl --no-convert set-x11-keymap us,ru "" "" grp:win_space_toggle`
+```
+sudo localectl --no-convert set-x11-keymap us,ru "" "" grp:win_space_toggle
+```
 - Disabling Mouse Acceleration
 ```
 sudo nano /etc/X11/xorg.conf.d/40-libinput.conf
