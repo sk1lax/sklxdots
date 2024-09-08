@@ -5,10 +5,10 @@
 nmcli radio wifi on
 nmcli device wifi connect SSID password PASSWORD
 ```
-### Basics
+### Post Update
 - Installing xorg
 ```
-sudo pacman -S xorg xorg-server xorg-xinit xorg-xrandr xorg-xfonts
+sudo pacman -S xorg xorg-server xorg-xinit xorg-xrandr xorg-xfonts 
 ```
 
 - Installing timeshift & backing up system
@@ -17,9 +17,9 @@ sudo pacman -S timeshift
 sudo timeshift --create --comments "pure arch"
 ```
 
-- Basic Apps
+- Essentiall Packages
 ```
-sudo pacman -S discord firefox telegram-desktop
+sudo pacman -S flatpak firefox telegram-desktop alacritty git 
 ```
 ### Pacman config
 ```
@@ -56,7 +56,7 @@ yay -S overskride
 ### Bspwm
 - Installing essentials
 ```
-sudo pacman -S picom bspwm sxhkd polybar rofi nitrogen alacritty git brightnessctl
+sudo pacman -S picom bspwm sxhkd polybar rofi nitrogen brightnessctl
 ```
 - Fonts
 ```
@@ -64,16 +64,33 @@ sudo pacman -S ttf-jetbrains-mono ttf-jetbrains-mono-nerd
 ```
 - Setting up xinirtc
 ```
-sudo nano .xinitrc
 touch ~/.config/bspwm/bspwmrc
 touch ~/.config/sxhkd/sxhkdrc
 sudo chmod 775 ~/.config/bspwm/bspwmrc
 sudo chmod 775 ~/.config/sxhkd/sxhkdrc
 ```
-
-`exec sxhkd &
-exec bspwm`
-
+```
+sudo nano .xinitrc
+```
+```
+exec sxhkd &
+exec bspwm
+```
+- Adding Keyboard Layout Keybind
+`sudo localectl --no-convert set-x11-keymap us,ru "" "" grp:win_space_toggle`
+- Disabling Mouse Acceleration
+```
+sudo nano /etc/X11/xorg.conf.d/40-libinput.conf
+```
+```
+ Section "InputClass"
+  Identifier "libinput pointer catchall"
+  MatchIsPointer "on"
+  MatchDevicePath "/dev/input/event*"
+  Driver "libinput"
+  Option "AccelProfile" "flat"
+ EndSection
+```
 ### Dual Booting
 ```
 sudo pacman -S ntp os-prober
@@ -111,26 +128,6 @@ cd rtl8821ce-dkms-git
 makepkg -si
 ```
 
-
-### Setting keyboard loyaout
-```
-sudo localectl --no-convert set-x11-keymap us,ru "" "" grp:win_space_toggle
-```
-
-### Disabling Mouse Acceleration
-```
-sudo nano /etc/X11/xorg.conf.d/40-libinput.conf
-```
-```
- Section "InputClass"
-  Identifier "libinput pointer catchall"
-  MatchIsPointer "on"
-  MatchDevicePath "/dev/input/event*"
-  Driver "libinput"
-  Option "AccelProfile" "flat"
- EndSection
-```
-
 ### Graphics Setup
 - Essential Packages
 ```
@@ -140,7 +137,7 @@ sudo pacman -S nvidia nvidia-prime nvidia-utils lib32-nvidia-utils vulkan-intel 
 ```
 yay -S envycontrol
 ```
--  Udev rules from wiki
+-  Udev Rules
 ```
 sudo nano /etc/udev/rules.d/80-nvidia-pm.rules
 ```
