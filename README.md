@@ -189,15 +189,25 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 ### Gnome
+- Installing
 ```
 sudo pacman -S gnome gnome-tweaks gdm
 ```
+- Uninstalling trash
 ```
 sudo pacman -R gnome-calculator gnome-calendar gnome-clocks gnome-connections gnome-console gnome-contacts simple-scan yelp gnome-music snapshot gnome-software gnome-weather epiphany gnome-maps gnome-disk-utility totem gnome-logs gnome-system-monitor rygel gnome-tour gnome-font-viewer gnome-characters malcontent
 ```
 
 ### KDE
+- Install
 ```
 sudo pacman -S sddm plasma kate dolphin spectacle gwenview ark
+```
+- Disabling annoying asf kwallet popups
+```
+nano ~/.config/kwalletrc
+```
+```
+Enabled=false
 ```
 
