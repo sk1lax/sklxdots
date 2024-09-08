@@ -162,6 +162,32 @@ sudo nano /etc/modprobe.d/nvidia-pm.conf
 ```
 `options nvidia "NVreg_DynamicPowerManagement=0x02"`
 
+- DE hybrid graphics intergration
+```
+sudo pacman -S switcheroo-control
+```
+```
+sudo systemctl enable --now switcheroo-control
+```
+
+### Linux-zen
+- Install
+```
+sudo pacman -Syu dkms nvidia-dkms linux-headers linux-zen linux-zen-headers
+```
+- Setting up grub
+```
+sudo nano /etc/default/grub
+```
+```
+GRUB_DEFAULT=saved
+GRUB_SAVEDEFAULT=true
+GRUB_DISABLE_SUBMENU=y
+```
+```
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+
 ### Gnome
 ```
 sudo pacman -S gnome gnome-tweaks gdm
@@ -172,5 +198,6 @@ sudo pacman -R gnome-calculator gnome-calendar gnome-clocks gnome-connections gn
 
 ### KDE
 ```
-sudo pacman -S sddm plasma kate dolphin spectacle gwenview
+sudo pacman -S sddm plasma kate dolphin spectacle gwenview ark
 ```
+
