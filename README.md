@@ -59,6 +59,10 @@ yay -S overskride
 ```
 sudo pacman -S picom bspwm sxhkd polybar rofi nitrogen brightnessctl
 ```
+- Installing Soft
+```
+sudo pacman -S file-roller geany qt5ct qt6ct lxappearance-gtk3 flameshot kvantum kvantum-qt5
+```
 - Fonts
 ```
 sudo pacman -S ttf-jetbrains-mono ttf-jetbrains-mono-nerd
