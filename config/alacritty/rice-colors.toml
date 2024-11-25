@@ -1,0 +1,33 @@
+# Helios
+
+# Default colors
+[colors.primary]
+background = "#000000"
+foreground = "#e5e9f0"
+
+# Cursor colors
+[colors.cursor]
+cursor = "#bb9af7"
+text = "#1a1b26"
+
+# Normal colors
+[colors.normal]
+black="#000000"
+red="#ee5396"
+green="#42be65"
+yellow="#ffe97b"
+blue="#33b1ff"
+magenta="#ff7eb6"
+cyan="#3ddbd9"
+white="#dde1e6"
+
+# Bright colors
+[colors.bright]
+black = "#000000"
+blue = "#39bae6"
+cyan = "#73b8ff"
+green = "#42be65"
+magenta = "#bc83e2"
+red = "#ee5396"
+white = "#ffe97b"
+yellow = "#FFA759"
