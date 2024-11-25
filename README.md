@@ -1,0 +1,2 @@
+# sklxdots
+bspwm dots 
